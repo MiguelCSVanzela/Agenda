@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c4cdd4;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    font-size: 50px;
+    font-weight: bold;
+    color: #007EA7;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: space-around;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form input {
+    font-size: 25px;
+    margin: 20px;
+    border: none;
+    padding: 2px 0px;
+}
+
+form input:focus {
+    outline-color: #00A7E1;
+}
+
+
+form button {
+    padding: 0 15px;
+    color: #ffffff;
+    background-color: #00A7E1;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+table {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+table th {
+    border-bottom: 1px solid #00171F;
+    font-size: 20px;
+    padding: 10px;
+}
+
+table td {
+    font-size: 15px;
+    padding-top: 10px;
+    color: #007EA7;
+}
+
+.novo-contato {
+    background-color: #3ff0ea;
+    font-weight: bold;
+}
