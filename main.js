@@ -10,8 +10,7 @@ form.addEventListener("submit", function (event) {
     adicionaLinha();
     atualizaTabela();
 
-    nome.value = '';
-    telefone.value = '';
+
 
 })
 
@@ -28,11 +27,14 @@ function adicionaLinha() {
 
     if (telefone.value.length < 9) {
         alert(`Contato deve conter no minimo 9 caracteres, inclua ${9 - telefone.value.length} numeros `);
+        telefone.focus();
     } else if (Number.isNaN(converteTelefone)) {
         alert("Seu contato precisa incluir apenas números")
-        telefone.value.value = '';
+        telefone.focus();
     } else if (nomes.includes(nome.value)) {
         alert(`O nome ${nome.value} já está registrado na em sua agenda`);
+        nome.value = '';
+        nome.focus();
     } else {
         nomes.push(nome.value);
         numeros.push(telefone.value)
@@ -43,18 +45,19 @@ function adicionaLinha() {
         linha += "</tr>"
 
         linhas += linha;
-        estiloNovoContato(linha);
+        estiloNovoContato();
+
+        nome.value = '';
+        telefone.value = '';
     }
 
 }
 
-function estiloNovoContato(linha) {
-    while (linhas.includes(linha)) {
-        setTimeout(function () {
-            document.querySelector("tbody").classList.add("novo-contato");
-        }, 100)
-        setTimeout(function () {
-            document.querySelector("tbody").classList.remove("novo-contato");
-        }, 2000)
-    }
+function estiloNovoContato() {
+    setTimeout(function () {
+        document.querySelector("tbody").classList.add("novo-contato");
+    }, 100)
+    setTimeout(function () {
+        document.querySelector("tbody").classList.remove("novo-contato");
+    }, 2000)
 }
